@@ -19,7 +19,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const mongoURI = 'mongodb+srv://mfjm0265:bella1234@cluster0.c9am3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoURI = 'mongodb+srv://<tuusuario>:<tucontraseña>@cluster0.c9am3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 
 
 mongoose.connect(mongoURI)
