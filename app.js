@@ -2,12 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Usuario = require('./models/Usuario');
 const Producto = require('./models/Producto');
-
-
-
-
-
-
 const usuarioRoutes = require('./routes/usuarioRoutes');
 const productoRoutes = require('./routes/productoRoutes');
 const app = express();
@@ -16,7 +10,7 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Middleware para contar operaciones
+
 let contadorOperaciones = 0;
 
 app.use((req, res, next) => {
@@ -35,7 +29,7 @@ mongoose.connect(mongoURI)
   .catch((err) => {
     console.error('Error conectando a MongoDB Atlas:', err);
   });
-// Usar las rutas
+
 app.use('/usuarios', usuarioRoutes);
 app.use('/productos', productoRoutes)
 
@@ -53,16 +47,10 @@ app.get('/contadores', async (req, res) => {
   }
 });
 
-// Endpoint para obtener el número total de operaciones
+
 app.get('/operaciones', (req, res) => {
   res.status(200).json({ totalOperaciones: contadorOperaciones });
 });
-
-
-
-
-
-
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);

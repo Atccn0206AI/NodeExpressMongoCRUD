@@ -40,7 +40,7 @@ router.put('/:id', async (req, res) => {
 router.delete('/:id', async (req, res) => {
   try {
     await Producto.findByIdAndDelete(req.params.id);
-    res.status(200).json({ message: 'Producto eliminado correctamente' });
+    res.status(200).json({ message: 'Producto eliminado' });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }

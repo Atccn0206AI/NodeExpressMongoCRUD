@@ -20,3 +20,7 @@ Backend basico desarrollado con Node.js, Express.js y MongoDB para gestionar dos
 4. Configura la conexion a MongoDB:
     Reemplaza la cadena de conexion de MongoDB Atlas con tus credenciales:
     const mongoURI = 'mongodb+srv://<tuusuario>:<tucontraseña>@cluster0.mongodb.net/Sample?retryWrites=true&w=majority';
+
+## EJECUCION
+Para iniciar el servidor corre:
+    node app.js
